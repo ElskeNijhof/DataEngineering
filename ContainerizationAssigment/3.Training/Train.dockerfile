@@ -11,6 +11,8 @@ EXPOSE 5000
 # Build image
 # docker run -it titanicpredict (image name)
 
+ENV FEATURE_API = http://FeatureExtractions:5000/2.FeatureExtractions/DatabaseFeatures
+
 CMD ["python" ,"Train.py" ] # ENTRYPOINTonly excutable
 
 

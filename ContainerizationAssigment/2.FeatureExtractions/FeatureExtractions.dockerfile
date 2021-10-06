@@ -6,16 +6,14 @@ WORKDIR /usr/src/myapp
 COPY requirements.txt /usr/src/myapp/
 # Install required python packages
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install flask
-RUN pip install pandas
 RUN pip install sklearn
 # Copy all files in training-db local host directory to /usr/src/myapp in Docker container
 COPY . .
 # Expose the port that our app runs in
 EXPOSE 5000
 # Environment  Variables
-ENV DB_URL=sqlite:///features.db
-#Add some meta data if necessary
-LABEL training.db.api="0.0.1-beta"
+ENV TRAININGDB_API=http://DataIngestion:5000/DataIngestion/database
+
+
 # Run our App
 CMD ["python3","app.py"]
