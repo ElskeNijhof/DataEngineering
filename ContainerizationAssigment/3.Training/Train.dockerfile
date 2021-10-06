@@ -11,4 +11,6 @@ EXPOSE 5000
 # Build image
 # docker run -it titanicpredict (image name)
 
-ENTRYPOINT [ "python" ,"Train.py" ]
+CMD [ "python" ,"Train.py" ] # ENTRYPOINTonly excutable
+
+
