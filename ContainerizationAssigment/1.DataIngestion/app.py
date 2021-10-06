@@ -4,7 +4,7 @@ from Resources import DataIngestion
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
-# db_util = DBUtil()
+#db_util = DBUtil()
 
 
 @app.route('/training-db/<table_name>', methods=['GET'])
