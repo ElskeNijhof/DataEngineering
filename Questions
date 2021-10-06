@@ -1,0 +1,10 @@
+Questions: 
+
+* Waarom zetten we een environment variable? Slide 18 Lab4 & slide 32 lab3
+* Hoe koppelen de dockerfiles samen? 
+* Dockerfiles checken + tips vragen
+* Welke Expose hebben we nodig? 
+* Moeten we app.run(host = '0.0.0', port = 5000/ 8080) toevoegen? 
+* Is de machine learning applicatie van voldoende niveau?
+* Welke port moeten we gebruiken? 
+* Hoe werkt github? 
