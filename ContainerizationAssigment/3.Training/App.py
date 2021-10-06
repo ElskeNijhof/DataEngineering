@@ -22,6 +22,4 @@ def train_models():
     resp = TrainV2.train(df.values)
     return resp
 
-
-
 app.run(host='0.0.0.0', port=5000)

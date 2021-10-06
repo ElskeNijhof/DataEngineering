@@ -1,10 +1,12 @@
 from flask import Flask, json, request, Response
+import os
+import pandas as pd
+import requests
 
-from Resources.db_util import DBUtil
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
-db_util = DBUtil()
+
 
 @app.route('/2.FeatureExtractions/DatabaseFeatures', methods=['GET'])
 def Extract_features():
