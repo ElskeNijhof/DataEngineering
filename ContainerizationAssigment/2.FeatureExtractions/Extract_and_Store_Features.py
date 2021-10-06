@@ -1,6 +1,6 @@
 from flask import Flask, json, request, Response
 
-from resources import DBUtil
+from Resources.db_util import DBUtil
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
