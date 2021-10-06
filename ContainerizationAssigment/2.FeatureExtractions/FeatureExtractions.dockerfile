@@ -18,4 +18,4 @@ ENV DB_URL=sqlite:///features.db
 #Add some meta data if necessary
 LABEL training.db.api="0.0.1-beta"
 # Run our App
-CMD ["python3","Extract_and_Store_Features.py"]
+CMD ["python3","app.py"]
