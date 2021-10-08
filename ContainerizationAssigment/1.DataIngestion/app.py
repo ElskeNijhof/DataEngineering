@@ -11,4 +11,4 @@ def read_data():
     resp = Response(df_train.to_json(orient='records'), status=200, mimetype='application/json')
     return resp
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=500)
