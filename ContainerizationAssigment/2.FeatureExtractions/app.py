@@ -10,6 +10,7 @@ app.config["DEBUG"] = True
 
 @app.route('/2.FeatureExtractions/DatabaseFeatures', methods=['GET'])
 def Extract_features():
+
     db_api = os.environ['TRAININGDB_API']
     # Make a GET request to training db service to retrieve the Database
     r = requests.get(db_api)

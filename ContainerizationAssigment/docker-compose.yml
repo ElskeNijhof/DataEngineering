@@ -29,26 +29,26 @@ services:
       - "503:500"
     environment:
       - FEATURE_API=http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
-
-  predict_service:
-    build: 
-      context: ./../ContainerizationAssigment/4.Predict
-      dockerfile: Dockerfile
-    depends_on:
-      - training_service
-    ports:
-      - "504:500"
-    environment:
-      - MODEL_API=http://training_service:500/Training/model
-    
-  visualization_service:
-    build: 
-      context: ./../ContainerizationAssigment/5.Visualization 
-      dockerfile: Dockerfile  
-    depends_on:
-      - predict_service
-    ports:
-      - "505:500"
+#
+#  predict_service:
+#    build: 
+#      context: ./../ContainerizationAssigment/4.Predict
+#      dockerfile: Dockerfile
+#    depends_on:
+#      - training_service
+#    ports:
+#      - "504:500"
+#    environment:
+#      - MODEL_API=http://training_service:500/Training/model
+#    
+#  visualization_service:
+#    build: 
+#      context: ./../ContainerizationAssigment/5.Visualization 
+#      dockerfile: Dockerfile  
+#    depends_on:
+#      - predict_service
+#    ports:
+#      - "505:500"
 
 
 
