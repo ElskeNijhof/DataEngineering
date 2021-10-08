@@ -1,4 +1,5 @@
 import os
+from flask.wrappers import Request
 import pandas as pd
 import requests
 from flask import Flask, Response, jsonify
@@ -11,7 +12,8 @@ app.config["DEBUG"] = True
 def predict(age, clss):
     # Get Model:
     Model_api = os.environ['MODEL_API']
-    prediction = Model_api.predict(age, clss)
+    Request =  requests.get(Model_api)
+    prediction = Request.predict(age, clss)
     return prediction
 
 app.run(host='0.0.0.0', port=500)
