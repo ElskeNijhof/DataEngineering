@@ -2,3 +2,5 @@ flask
 pandas
 numpy
 requests
+scikit-learn
+os
