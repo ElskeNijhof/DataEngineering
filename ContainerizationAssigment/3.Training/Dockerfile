@@ -12,6 +12,4 @@ EXPOSE 500
 # define URL needed for Feature extraction
 #ENV FEATURE_API = http://FeatureExtractions:500/2.FeatureExtractions/DatabaseFeatures
 
-CMD ["python" ,"app2.py" ] 
-
-
+CMD ["python" ,"app2.py"] 

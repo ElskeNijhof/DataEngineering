@@ -10,6 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 #expose to port 500
 EXPOSE 500
 
-CMD ["python" ,"app.py" ] 
-
-
+CMD ["python" ,"app.py"] 
