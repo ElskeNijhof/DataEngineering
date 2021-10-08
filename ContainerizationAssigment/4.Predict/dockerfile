@@ -10,7 +10,7 @@ RUN pip install sklearn
 #expose to port 500
 EXPOSE 500
 # define URL needed for Feature extraction
-ENV MODEL_API = http://Tra:500/Training/model
+#ENV MODEL_API = http://Tra:500/Training/model
 
 CMD ["python" ,"app.py" ] 
 

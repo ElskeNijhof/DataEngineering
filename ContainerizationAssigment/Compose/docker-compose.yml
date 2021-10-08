@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "501:500"
+    enviroment:
+      - TRAININGDB_API = http://dataingestion_service:500/DataIngestion/database
   
   featureextraction_service:
     build: 
@@ -15,7 +17,9 @@ services:
       - dataingestion_service
     ports:
       - "502:500"
-
+    enviroment:
+      - TRAININGDB_API = http://dataingestion_service:500/DataIngestion/database
+  
   
   training_service:
     build: 
@@ -25,6 +29,8 @@ services:
       featureextraction_service
     ports:
       - "503:500"
+    environment:
+      - FEATURE_API = http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
 
   predict_service:
     build: 
@@ -34,6 +40,8 @@ services:
       training_service
     ports:
       - "504:500"
+    enviroment:
+      - MODEL_API = http://training_service:500/Training/model
     
   visualization_service:
     build: 
@@ -43,6 +51,7 @@ services:
       predict_service
     ports:
       - "505:500"
+
 
 
 

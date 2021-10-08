@@ -14,7 +14,7 @@ def Visualization(age, clss):
            "<b>{liveOrDie}</b><br/>" 
 
     #Retrieve the score that indicates 'live' or 'die'
-    Prediction_api = os.environ['/predict/Age:{}/class:{}'.format(age, clss)]
+    Prediction_api = os.environ['http://predict_service:500/predict/Age:{}/class:{}'.format(age, clss)]
     if Prediction_api >= 0.5:
         result = "live"
         return html.format(liveOrDie = result)

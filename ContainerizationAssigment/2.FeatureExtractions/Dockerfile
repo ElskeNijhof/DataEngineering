@@ -11,7 +11,7 @@ COPY . .
 # Expose the port that our app runs in
 EXPOSE 500
 # Environment  Variables
-ENV TRAININGDB_API=http://DataIngestion:500/DataIngestion/database
+#ENV TRAININGDB_API=http://DataIngestion:500/DataIngestion/database
 
 # Run our App
 CMD ["python3","app.py"]
