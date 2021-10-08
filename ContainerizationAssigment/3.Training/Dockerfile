@@ -10,7 +10,7 @@ RUN pip install sklearn
 #expose to port 500
 EXPOSE 500
 # define URL needed for Feature extraction
-ENV FEATURE_API = http://FeatureExtractions:5000/2.FeatureExtractions/DatabaseFeatures
+ENV FEATURE_API = http://FeatureExtractions:500/2.FeatureExtractions/DatabaseFeatures
 
 CMD ["python" ,"app.py" ] 
 

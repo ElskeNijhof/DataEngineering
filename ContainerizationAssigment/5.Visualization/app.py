@@ -18,6 +18,7 @@ def Visualization(age, clss):
         print("gello")
         #return you are dead
 
+app.run(host='0.0.0.0', port=500)
    
     
 
