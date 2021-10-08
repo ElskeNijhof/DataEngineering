@@ -3,41 +3,46 @@ services:
   dataingestion_service:
     build: 
       context: #input file location 
+      dockerfile: Dockerfile
     ports:
-      - "8081:8080"
+      - "501:500"
   
   featureextraction_service:
     build: 
       context: #input file location
+      dockerfile: Dockerfile
     depends_on:
       - dataingestion_service
     ports:
-      - "8082:8080"
+      - "502:500"
 
   
   training_service:
     build: 
-      context: #input file location   
+      context: #input file location 
+      dockerfile: Dockerfile
     depends_on:
       featureextraction_service
     ports:
-      - "8083:8080"
+      - "503:500"
 
   predict_service:
     build: 
       context: #input file location
+      dockerfile: Dockerfile
     depends_on:
       training_service
     ports:
-      - "8084:8080"
+      - "504:500"
     
   visualization_service:
     build: 
-      context: #input file location   
+      context: #input file location 
+      dockerfile: Dockerfile  
     depends_on:
       predict_service
     ports:
-      - "8085:8080"
+      - "505:500"
 
 
 
