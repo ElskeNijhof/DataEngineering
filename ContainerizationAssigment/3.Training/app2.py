@@ -18,7 +18,8 @@ def train_models():
     r = requests.get(feature_api)
     j = r.json()
     df = pd.DataFrame.from_dict(j)
-    resp = TrainV2.train(df.values)
+    Model = TrainV2.train(df.values)
+    resp = Response(Model, status=200, mimetype='application/json')
     return resp
 
 app.run(host='0.0.0.0', port=500)

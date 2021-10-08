@@ -15,9 +15,10 @@ def predict(age, clss):
            "<b>{liveOrDie}</b><br/>" 
     # Get Model:
     Model_api = os.environ['MODEL_API']
-    Request =  requests.get(Model_api)
-    
-    result = Request.json()
+    Request = requests.get(Model_api)
+    f = Request.json()
+    result = 0
+
     return html.format(liveOrDie = result)
 
 app.run(host='0.0.0.0', port=500)
