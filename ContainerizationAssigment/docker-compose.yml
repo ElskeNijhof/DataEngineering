@@ -24,7 +24,7 @@ services:
       context: /3.Training
       dockerfile: Dockerfile
     depends_on:
-      featureextraction_service
+      - featureextraction_service
     ports:
       - "503:500"
     environment:
@@ -35,7 +35,7 @@ services:
       context: /4.Predict
       dockerfile: Dockerfile
     depends_on:
-      training_service
+      - training_service
     ports:
       - "504:500"
     environment:
@@ -46,7 +46,7 @@ services:
       context: /5.Visualization 
       dockerfile: Dockerfile  
     depends_on:
-      predict_service
+      - predict_service
     ports:
       - "505:500"
 
