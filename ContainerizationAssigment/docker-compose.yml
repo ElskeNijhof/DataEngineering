@@ -41,14 +41,14 @@ services:
     environment:
       - MODEL_API=http://training_service:500/Training/model
     
-  visualization_service:
-    build: 
-      context: ./../ContainerizationAssigment/5.Visualization 
-      dockerfile: Dockerfile  
-    depends_on:
-      - predict_service
-    ports:
-      - "505:500"
+ # visualization_service:
+ #   build: 
+  #    context: ./../ContainerizationAssigment/5.Visualization 
+   #   dockerfile: Dockerfile  
+    #depends_on:
+     # - predict_service
+    #ports:
+    #  - "505:500"
 
 
 
