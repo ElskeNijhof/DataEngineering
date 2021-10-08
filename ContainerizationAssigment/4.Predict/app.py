@@ -14,6 +14,7 @@ def predict(age, clss):
     Model_api = os.environ['MODEL_API']
     Request =  requests.get(Model_api)
     prediction = Request.predict(age, clss)
+    
     return prediction
 
 app.run(host='0.0.0.0', port=500)
