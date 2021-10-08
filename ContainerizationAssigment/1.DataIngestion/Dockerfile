@@ -1,7 +1,7 @@
 # define Python version
 FROM python:3.9-slim
 #define workdir
-WORKDIR /usr/src/myapp
+WORKDIR /myapp
 # Copy requirements.txt  to the working directory
 COPY requirements.txt .
 # Install required python packages

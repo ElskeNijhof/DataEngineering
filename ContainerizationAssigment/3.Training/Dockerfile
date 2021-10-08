@@ -1,7 +1,7 @@
 #using python as base image
 FROM python:3.9-slim
 #set work directory
-WORKDIR /usr/src/myapp
+WORKDIR /myapp
 # Get all files in this directory
 COPY . .
 #install packages

@@ -1,13 +1,15 @@
+#using python as base image
 FROM python:3.9-slim
+#set work directory
+WORKDIR /myapp
+# Get all files in this directory
+COPY . .
+#install packages
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY Predict.py .
-COPY Titanic_model.pkl .
+#expose to port 500
+EXPOSE 500
 
-RUN pip install sklearn #Package die nodig is voor het model (Predict.py)
+CMD ["python" ,"app.py" ] 
 
-#ENTRYPOINT [ "/bin/bash" ] # terminal meteen opstarten
 
-# Build image
-# docker run -it titanicpredict (image name)
-
-ENTRYPOINT [ "python" ,"Predict.py" ]
