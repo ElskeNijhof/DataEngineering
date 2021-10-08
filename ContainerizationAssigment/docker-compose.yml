@@ -2,14 +2,14 @@ version: "3.8"
 services:
   dataingestion_service:
     build: 
-      context: ./../../../ContainerizationAssigment/1.DataIngestion
+      context: ./../ContainerizationAssigment/1.DataIngestion
       dockerfile: Dockerfile
     ports:
       - "501:500"
     
   featureextraction_service:
     build: 
-      context: ./../../../ContainerizationAssigment/2.FeatureExtractions
+      context: ./../ContainerizationAssigment/2.FeatureExtractions
       dockerfile: Dockerfile
     depends_on:
       - dataingestion_service
@@ -21,7 +21,7 @@ services:
   
   training_service:
     build: 
-      context: ./../../../ContainerizationAssigment/3.Training
+      context: ./../ContainerizationAssigment/3.Training
       dockerfile: Dockerfile
     depends_on:
       - featureextraction_service
@@ -32,7 +32,7 @@ services:
 
   predict_service:
     build: 
-      context: ./../../../ContainerizationAssigment/4.Predict
+      context: ./../ContainerizationAssigment/4.Predict
       dockerfile: Dockerfile
     depends_on:
       - training_service
@@ -43,7 +43,7 @@ services:
     
   visualization_service:
     build: 
-      context: ./../../../ContainerizationAssigment/5.Visualization 
+      context: ./../ContainerizationAssigment/5.Visualization 
       dockerfile: Dockerfile  
     depends_on:
       - predict_service
