@@ -2,7 +2,7 @@ version: "3.8"
 services:
   dataingestion_service:
     build: 
-      context: /DataIngestion
+      context: /1.DataIngestion
       dockerfile: Dockerfile
     ports:
       - "501:500"
@@ -11,7 +11,7 @@ services:
   
   featureextraction_service:
     build: 
-      context: /FeatureExtractions
+      context: /2.FeatureExtractions
       dockerfile: Dockerfile
     depends_on:
       - dataingestion_service
@@ -23,7 +23,7 @@ services:
   
   training_service:
     build: 
-      context: /Training
+      context: /3.Training
       dockerfile: Dockerfile
     depends_on:
       featureextraction_service
@@ -34,7 +34,7 @@ services:
 
   predict_service:
     build: 
-      context: /Predict
+      context: /4.Predict
       dockerfile: Dockerfile
     depends_on:
       training_service
@@ -45,7 +45,7 @@ services:
     
   visualization_service:
     build: 
-      context: /Visualization 
+      context: /5.Visualization 
       dockerfile: Dockerfile  
     depends_on:
       predict_service
