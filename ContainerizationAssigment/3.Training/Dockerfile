@@ -13,6 +13,6 @@ EXPOSE 5000
 
 ENV FEATURE_API = http://FeatureExtractions:5000/2.FeatureExtractions/DatabaseFeatures
 
-CMD ["python" ,"Train.py" ] # ENTRYPOINTonly excutable
+CMD ["python" ,"Train.py" ] 
 
 

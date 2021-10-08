@@ -2,9 +2,8 @@ import os
 
 import pandas as pd
 import requests
-from flask import Flask, Response
+from flask import Flask, Response,jsonify
 
-from flask import jsonify
 from Resources import TrainV2
 
 
@@ -22,4 +21,4 @@ def train_models():
     resp = TrainV2.train(df.values)
     return resp
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=500)
