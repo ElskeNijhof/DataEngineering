@@ -10,7 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 #Expose the port that our app runs in
-EXPOSE 5000
+EXPOSE 500
 
 # Meta Data 
 LABEL DataIngestion = "LocalVersion"

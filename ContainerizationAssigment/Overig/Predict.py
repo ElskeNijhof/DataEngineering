@@ -1,6 +1,10 @@
 import pickle
 import sys
 
+
+@app.route('/Training/model', methods=['GET'])
+def predict():
+    
 with open("Titanic_model.pkl", 'rb') as file:
     pickle_model = pickle.load(file)
 

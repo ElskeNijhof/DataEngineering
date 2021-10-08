@@ -11,11 +11,11 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/Training/model', methods=['POST'])
+@app.route('/Training/model', methods=['GET'])
 def train_models():
-    db_api = os.environ['FEATURE_API']
+    feature_api = os.environ['FEATURE_API']
     # Make a GET request to training db service to retrieve the training data/features.
-    r = requests.get(db_api)
+    r = requests.get(feature_api)
     j = r.json()
     df = pd.DataFrame.from_dict(j)
     resp = TrainV2.train(df.values)
