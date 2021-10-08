@@ -13,13 +13,13 @@ app.config["DEBUG"] = True
 
 @app.route('/Training/model', methods=['GET'])
 def train_models():
+   
     feature_api = os.environ['FEATURE_API']
     # Make a GET request to training db service to retrieve the training data/features.
     r = requests.get(feature_api)
     j = r.json()
     df = pd.DataFrame.from_dict(j)
-    Model = TrainV2.train(df.values)
-    resp = Response(Model, status=200, mimetype='application/json')
+    resp = TrainV2.train(df.values)
     return resp
 
 app.run(host='0.0.0.0', port=500)
