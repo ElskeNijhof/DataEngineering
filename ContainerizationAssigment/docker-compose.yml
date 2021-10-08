@@ -38,7 +38,7 @@ services:
       training_service
     ports:
       - "504:500"
-    enviromment:
+    environment:
       - MODEL_API = http://training_service:500/Training/model
     
   visualization_service:
