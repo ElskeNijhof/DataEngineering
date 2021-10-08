@@ -16,7 +16,7 @@ services:
     ports:
       - "502:500"
     environment:
-      - TRAININGDB_API = http://dataingestion_service:500/DataIngestion/database
+      - TRAININGDB_API=http://dataingestion_service:500/DataIngestion/database
   
   
   training_service:
@@ -28,7 +28,7 @@ services:
     ports:
       - "503:500"
     environment:
-      - FEATURE_API = http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
+      - FEATURE_API=http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
 
   predict_service:
     build: 
@@ -39,7 +39,7 @@ services:
     ports:
       - "504:500"
     environment:
-      - MODEL_API = http://training_service:500/Training/model
+      - MODEL_API=http://training_service:500/Training/model
     
   visualization_service:
     build: 
