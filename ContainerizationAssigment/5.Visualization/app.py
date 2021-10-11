@@ -14,7 +14,7 @@ def Visualization(age, clss):
            "<b>{liveOrDie}</b><br/>" 
 
     #Retrieve the score that indicates 'live' or 'die'
-    Prediction_api = 'http://predict_service:500/predict/Age:{}/class:{}'.format(age, clss)
+    Prediction_api = 'http://predict_service:5000/predict/Age:{}/class:{}'.format(age, clss)
     value = requests.get(Prediction_api)
     #j = Request.json()
     
