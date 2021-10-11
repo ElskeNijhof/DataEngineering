@@ -35,7 +35,7 @@ def predict(age, clss):
         with open("Titanic_model.pkl", 'rb') as file:
             pickle_model = pickle.load(file)    
         
-        prediction = pickle_model.predict([age,clss])
+        prediction = pickle_model.predict([[age,clss]])
             # do API CALL TO TRAIN
         
             #PREDICUT USING MODEL
