@@ -29,7 +29,7 @@ services:
       - "503:500"
     environment:
       - FEATURE_API=http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
-      - MODEL_REPO=/myapp/models
+      - MODEL_REPO=/usr/src/myapp/models
 
   predict_service:
     build: 
@@ -41,7 +41,7 @@ services:
       - "504:500"
     environment:
       - Train_API=http://training_service:500/Training/model
-      - MODEL_REPO=/myapp/models
+      - MODEL_REPO=/usr/src/myapp/models
 #    
 #  visualization_service:
 #    build: 
