@@ -30,7 +30,7 @@ services:
     environment:
       - FEATURE_API=http://featureextraction_service:5000/2.FeatureExtractions/DatabaseFeatures
     volumes:
-      - MODEL_REPO:/myapp/models
+      - "MODEL_REPO:/myapp/models"
 
   predict_service:
     build: 
@@ -43,7 +43,7 @@ services:
     environment:
       - Train_API=http://training_service:5000/Training/model
     volumes:
-      - MODEL_REPO:/myapp/models
+      - "MODEL_REPO:/myapp/models"
 #    
 #  visualization_service:
 #    build: 
@@ -55,7 +55,7 @@ services:
 #      - "5005:5000"
 
 volumes:
-  - MODEL_REPO
+  - MODEL_REPO:
 
 
 
