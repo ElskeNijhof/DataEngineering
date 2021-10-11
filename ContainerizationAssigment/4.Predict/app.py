@@ -22,8 +22,8 @@ def predict(age, clss):
 
         prediction= pickle_model.predict([[age,clss]])
         #PREDICUT USING MODEL
-
-        return jsonify(prediction)   
+        
+        return float(prediction[0])   
 
 
     except:
@@ -40,6 +40,5 @@ def predict(age, clss):
         
             #PREDICUT USING MODEL
 
-        return jsonify(prediction)   
-
+        return float(prediction[0])  
 app.run(host='0.0.0.0', port=5000)
