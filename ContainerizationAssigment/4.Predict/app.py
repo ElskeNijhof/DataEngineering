@@ -21,14 +21,23 @@ def predict(age, clss):
         with open(Model_DIR, 'rb') as file:
             pickle_model = pickle.load(file)
         j = "Available"
+        #PREDICUT USING MODEL
+
         return html.format(liveOrDie =j)    
 
 
     except:
-                
-        j =  "not avaiable"
-        return html.format(liveOrDie =j)
-       
+        Train_API = os.environ['Train_API']   
+        TrainModel = requests.get(Train_API)   
+
+        
+        os.path.join(model_repo, "Titanic_model.pkl")  
+            # do API CALL TO TRAIN
+        j = "Available"
+            #PREDICUT USING MODEL
+
+        return html.format(liveOrDie =j) 
+
 
    
     # Get Model:
