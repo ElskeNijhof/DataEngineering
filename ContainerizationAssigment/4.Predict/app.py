@@ -16,16 +16,20 @@ def predict(age, clss):
     
     #Check if model is already saved locally
     model_repo = os.environ['MODEL_REPO']
-    Model_DIR = os.path.join[model_repo, "Titanic_model.pkl"]
-    with open(Model_DIR, 'rb') as file:
-        pickle_model = pickle.load(file)
-    
-    if pickle_model:
+    try: 
+        os.path.join(model_repo, "Titanic_model.pkl")
+        with open(Model_DIR, 'rb') as file:
+            pickle_model = pickle.load(file)
         j = "Available"
-        return html.format(liveOrDie =j)
-    else:
+        return html.format(liveOrDie =j)    
+
+
+    except:
+                
         j =  "not avaiable"
         return html.format(liveOrDie =j)
+       
+
    
     # Get Model:
     #Model_api = os.environ['Train_API']
