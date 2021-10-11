@@ -29,7 +29,8 @@ services:
       - "5003:5000"
     environment:
       - FEATURE_API=http://featureextraction_service:5000/2.FeatureExtractions/DatabaseFeatures
-      - MODEL_REPO=/myapp/models
+    volumes:
+      - MODEL_REPO:/myapp/models
 
   predict_service:
     build: 
@@ -41,7 +42,8 @@ services:
       - "5004:5000"
     environment:
       - Train_API=http://training_service:5000/Training/model
-      - MODEL_REPO=/myapp/models
+    volumes:
+      - MODEL_REPO:/myapp/models
 #    
 #  visualization_service:
 #    build: 
@@ -51,6 +53,9 @@ services:
 #      - predict_service
 #    ports:
 #      - "5005:5000"
+
+volumes:
+  - MODEL_REPO
 
 
 
