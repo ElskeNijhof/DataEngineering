@@ -18,7 +18,7 @@ def Visualization(age, clss):
     Request = requests.get(Prediction_api)
     value = float(Request.text)
     
-    if value[0] >= 0.5:
+    if value >= 0.5:
         result = "live"
         return html.format(liveOrDie = age)
     else:
