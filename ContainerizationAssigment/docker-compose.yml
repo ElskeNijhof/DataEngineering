@@ -46,15 +46,15 @@ services:
       - MODEL_REPO=/myapp/models
     volumes:
       - "model-repo:/myapp/models"
-#    
-#  visualization_service:
-#    build: 
-#      context: ./../ContainerizationAssigment/5.Visualization 
-#      dockerfile: Dockerfile  
-#    depends_on:
-#      - predict_service
-#    ports:
-#      - "5005:5000"
+    
+  visualization_service:
+    build: 
+      context: ./../ContainerizationAssigment/5.Visualization 
+      dockerfile: Dockerfile  
+    depends_on:
+      - predict_service
+    ports:
+      - "5005:5000"
 
 volumes:
   model-repo:

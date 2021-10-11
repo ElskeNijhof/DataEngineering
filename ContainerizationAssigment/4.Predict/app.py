@@ -11,8 +11,7 @@ app.config["DEBUG"] = True
 
 @app.route('/predict/Age:<age>/class:<clss>', methods=['GET'])
 def predict(age, clss):
-    html = "<h3>Hello, you will probably...</h3>" \
-           "<b>{liveOrDie}</b><br/>" 
+   
     
     #Check if model is already saved locally
     model_repo = os.environ['MODEL_REPO']
@@ -24,7 +23,7 @@ def predict(age, clss):
         prediction= pickle_model.predict([[age,clss]])
         #PREDICUT USING MODEL
 
-        return html.format(liveOrDie = prediction)    
+        return jsonify(prediction)   
 
 
     except:
@@ -41,6 +40,6 @@ def predict(age, clss):
         
             #PREDICUT USING MODEL
 
-        return html.format(liveOrDie = prediction) 
+        return jsonify(prediction)   
 
 app.run(host='0.0.0.0', port=5000)
