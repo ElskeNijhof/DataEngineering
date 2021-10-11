@@ -15,8 +15,8 @@ def Visualization(age, clss):
 
     #Retrieve the score that indicates 'live' or 'die'
     Prediction_api = 'http://predict_service:5000/predict/Age:{}/class:{}'.format(age, clss)
-    value = requests.get(Prediction_api)
-    #j = Request.json()
+    Request = requests.get(Prediction_api)
+    value = Request.json()
     
     if value[0] >= 0.5:
         result = "live"
