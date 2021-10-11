@@ -5,7 +5,7 @@ services:
       context: ./../ContainerizationAssigment/1.DataIngestion
       dockerfile: Dockerfile
     ports:
-      - "501:500"
+      - "5001:5000"
     
   featureextraction_service:
     build: 
@@ -14,7 +14,7 @@ services:
     depends_on:
       - dataingestion_service
     ports:
-      - "502:500"
+      - "5002:5000"
     environment:
       - TRAININGDB_API=http://dataingestion_service:500/DataIngestion/database
   
@@ -26,7 +26,7 @@ services:
     depends_on:
       - featureextraction_service
     ports:
-      - "503:500"
+      - "5003:5000"
     environment:
       - FEATURE_API=http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
       - MODEL_REPO=/myapp/models
@@ -38,7 +38,7 @@ services:
     depends_on:
       - training_service
     ports:
-      - "504:500"
+      - "5004:5000"
     environment:
       - Train_API=http://training_service:500/Training/model
       - MODEL_REPO=/myapp/models
@@ -50,7 +50,7 @@ services:
 #    depends_on:
 #      - predict_service
 #    ports:
-#      - "505:500"
+#      - "5005:5000"
 
 
 

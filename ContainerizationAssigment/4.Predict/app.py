@@ -42,4 +42,4 @@ def predict(age, clss):
 
         return html.format(liveOrDie =prediction) 
 
-app.run(host='0.0.0.0', port=500)
+app.run(host='0.0.0.0', port=5000)

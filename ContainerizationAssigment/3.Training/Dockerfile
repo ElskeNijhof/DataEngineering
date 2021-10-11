@@ -8,7 +8,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install sklearn 
 #expose to port 500
-EXPOSE 500
+EXPOSE 5000
 # define URL needed for Feature extraction
 ENV Model_Repo = /myapp/models
 

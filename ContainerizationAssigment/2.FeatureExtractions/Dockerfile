@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy all files in training-db local host directory to /usr/src/myapp in Docker container
 COPY . .
 # Expose the port that our app runs in
-EXPOSE 500
+EXPOSE 5000
 # Environment  Variables
 #ENV TRAININGDB_API=http://DataIngestion:500/DataIngestion/database
 

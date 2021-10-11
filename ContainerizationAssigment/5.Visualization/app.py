@@ -25,7 +25,7 @@ def Visualization(age, clss):
         result = "die"
         return html.format(liveOrDie = result)
 
-app.run(host='0.0.0.0', port=500)
+app.run(host='0.0.0.0', port=5000)
    
     
 
