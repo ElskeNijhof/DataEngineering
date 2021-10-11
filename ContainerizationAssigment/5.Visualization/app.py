@@ -20,7 +20,7 @@ def Visualization(age, clss):
     
     if value >= 0.5:
         result = "live"
-        return html.format(liveOrDie = age)
+        return html.format(liveOrDie = result)
     else:
         result = "die"
         return html.format(liveOrDie = result)
