@@ -29,9 +29,10 @@ def predict(age, clss):
     except:
         Train_API = os.environ['Train_API']   
         TrainModel = requests.get(Train_API)
-         
-        Model_DIR = os.path.join(model_repo, "Titanic_model.pkl")
-        with open(Model_DIR, 'rb') as file:
+
+        file_path = os.path.join(model_repo) 
+        os.chdir(file_path)
+        with open("Titanic_model.pkl", 'rb') as file:
             pickle_model = pickle.load(file)    
         
         prediction = pickle_model.predict([age,clss])
