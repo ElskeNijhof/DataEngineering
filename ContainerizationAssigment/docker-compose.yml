@@ -29,6 +29,7 @@ services:
       - "503:500"
     environment:
       - FEATURE_API=http://featureextraction_service:500/2.FeatureExtractions/DatabaseFeatures
+      - Model_Repo=/myapp/models
 
   predict_service:
     build: 
@@ -39,7 +40,8 @@ services:
     ports:
       - "504:500"
     environment:
-      - MODEL_API=http://training_service:500/Training/model
+      - Train_API=http://training_service:500/Training/model
+      - Model_Repo=/myapp/models
 #    
 #  visualization_service:
 #    build: 
