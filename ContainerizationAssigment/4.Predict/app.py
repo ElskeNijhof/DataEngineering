@@ -3,6 +3,7 @@ from flask.wrappers import Request
 import pandas as pd
 import requests
 from flask import Flask, Response, jsonify
+import pickle
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -15,12 +16,15 @@ def predict(age, clss):
     
     #Check if model is already saved locally
     model_repo = os.environ['MODEL_REPO']
-    Model = os.path.join[model_repo, "model.h5"]
-    if Model:
+    Model_DIR = os.path.join[model_repo, "Titanic_model.pkl"]
+    with open(Model_DIR, 'rb') as file:
+        pickle_model = pickle.load(file)
+    
+    if pickle_model:
         j = "Available"
         return html.format(liveOrDie =j)
     else:
-        j =  "nog avaiable"
+        j =  "not avaiable"
         return html.format(liveOrDie =j)
    
     # Get Model:
