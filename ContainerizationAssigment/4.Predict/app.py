@@ -20,10 +20,11 @@ def predict(age, clss):
         Model_DIR = os.path.join(model_repo, "Titanic_model.pkl")
         with open(Model_DIR, 'rb') as file:
             pickle_model = pickle.load(file)
-        j = "Available"
+
+        prediction= pickle_model.predict([[age,clss]])
         #PREDICUT USING MODEL
 
-        return html.format(liveOrDie =j)    
+        return html.format(liveOrDie = prediction)    
 
 
     except:
@@ -40,6 +41,6 @@ def predict(age, clss):
         
             #PREDICUT USING MODEL
 
-        return html.format(liveOrDie =prediction) 
+        return html.format(liveOrDie = prediction) 
 
 app.run(host='0.0.0.0', port=5000)
