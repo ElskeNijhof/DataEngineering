@@ -1,4 +1,3 @@
-flask
-pandas
-numpy
-requests
+version https://git-lfs.github.com/spec/v1
+oid sha256:2650259d3f523cf4e2dfe0ebd23bc182e4fd5a8f8633c75f94e99a677e440dbd
+size 28

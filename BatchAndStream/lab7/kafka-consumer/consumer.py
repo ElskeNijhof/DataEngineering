@@ -1,30 +1,3 @@
-from kafka import KafkaConsumer, TopicPartition
-
-
-def read_from_topic(kafka_consumer, topic):
-    kafka_consumer.subscribe(topics=[topic])
-    for msg in kafka_consumer:
-        print(msg.value.decode("utf-8"))
-
-
-def read_from_topic_with_partition(kafka_consumer, topic):
-    kafka_consumer.assign([TopicPartition(topic, 1)])
-    for msg in kafka_consumer:
-        print(msg)
-
-
-def read_from_topic_with_partition_offset(kafka_consumer, topic):
-    partition = TopicPartition(topic, 0)
-    kafka_consumer.assign([partition])
-    last_offset = kafka_consumer.end_offsets([partition])[partition]
-    for msg in kafka_consumer:
-        if msg.offset == last_offset - 1:
-            break
-
-
-if __name__ == '__main__':
-    consumer = KafkaConsumer(bootstrap_servers='35.188.19.170:9092',  # use your VM's external IP Here!
-                             auto_offset_reset='earliest',
-                             consumer_timeout_ms=10000)
-    print(consumer.topics())
-    read_from_topic(consumer, 'wordcount')
+version https://git-lfs.github.com/spec/v1
+oid sha256:5e65eaf4e1f704940a05687a87d68d778ed36da00f2cf8af6e6005ad5490c0ee
+size 1004

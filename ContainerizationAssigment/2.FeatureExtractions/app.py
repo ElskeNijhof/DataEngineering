@@ -1,23 +1,3 @@
-from flask import Flask, json, request, Response
-import os
-import pandas as pd
-import requests
-
-
-app = Flask(__name__)
-app.config["DEBUG"] = True
-
-
-@app.route('/2.FeatureExtractions/DatabaseFeatures', methods=['GET'])
-def Extract_features():
-
-    db_api = os.environ['TRAININGDB_API']
-    # Make a GET request to training db service to retrieve the Database
-    r = requests.get(db_api)
-    j = r.json()
-    df = pd.DataFrame.from_dict(j)
-    df_new = df[['Age', 'Pclass','Survived']]
-    resp = Response(df_new.to_json(orient='records'), status=200, mimetype='application/json')
-    return resp
-
-app.run(host='0.0.0.0', port=5000)
+version https://git-lfs.github.com/spec/v1
+oid sha256:4fd418c3eea1cda65f01b458e49c7fca3c7037b4cfcacfd8db7d4bc529f954bf
+size 631

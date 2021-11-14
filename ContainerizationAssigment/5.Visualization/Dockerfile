@@ -1,13 +1,3 @@
-#using python as base image
-FROM python:3.9-slim
-#set work directory
-WORKDIR /myapp
-# Get all files in this directory
-COPY . .
-#install packages
-RUN pip install --no-cache-dir -r requirements.txt
-
-#expose to port 500
-EXPOSE 5000
-
-CMD ["python" ,"app.py"] 
+version https://git-lfs.github.com/spec/v1
+oid sha256:9136800fbda51250a74d467fdab0eaf4edd97fbe84c96ee5ff482f8aed8fc411
+size 255

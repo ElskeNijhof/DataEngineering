@@ -1,25 +1,3 @@
-import pandas as pd
-import os 
-from sklearn import linear_model
-import pickle
-
-# Data ingestion
-os.chdir('C:\\Users\\Elske\\OneDrive\\Documenten\\DE_Assignment1')
-df_test = pd.read_csv('test.csv').dropna()
-df_train = pd.read_csv('train.csv').dropna()
-
-# Extract and store Features
-X_train = df_train[['Age', 'Pclass']]
-y_train = df_train['Survived']
-
-# Train Model
-reg = linear_model.LinearRegression()
-reg.fit(X_train, y_train)
-
-# Pickle save
-pkl_filename = "Titanic_model.pkl"
-with open(pkl_filename, 'wb') as file:
-    pickle.dump(reg, file)
-
-# Flask to
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:8593e2697391c1705f0bb59be58813ce46a0b262461d7f77682e69c0a30d7086
+size 558

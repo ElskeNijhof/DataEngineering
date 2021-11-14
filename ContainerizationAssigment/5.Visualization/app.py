@@ -1,32 +1,3 @@
-import os
-import pandas as pd
-import requests
-from flask import Flask, Response,jsonify
-
-app = Flask(__name__)
-app.config["DEBUG"] = True
-
-
-@app.route('/visualization/Age:<age>/class:<clss>', methods=['GET'])
-def Visualization(age, clss):
-    #Set up returning text
-    html = "<h3>Hello, you will probably...</h3>" \
-           "<b>{liveOrDie}</b><br/>" 
-
-    #Retrieve the score that indicates 'live' or 'die'
-    Prediction_api = 'http://predict_service:5000/predict/Age:{}/class:{}'.format(age, clss)
-    Request = requests.get(Prediction_api)
-    value = float(Request.text)
-    
-    if value >= 0.5:
-        result = "live"
-        return html.format(liveOrDie = result)
-    else:
-        result = "die"
-        return html.format(liveOrDie = result)
-
-app.run(host='0.0.0.0', port=5000)
-   
-    
-
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cb81e8145dd309711f7e08305ab3bd198c3cd998f58a67881ccc184cf4bd476c
+size 804

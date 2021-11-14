@@ -1,32 +1,3 @@
-# MLP for Pima Indians Dataset saved to single file
-# see https://machinelearningmastery.com/save-load-keras-deep-learning-models/
-import logging
-import os
-import pickle
-from sklearn.linear_model import LinearRegression
-from flask import jsonify
-
-
-def train(dataset):
-    # split into input (X) and output (Y) variables
-    X = dataset[["Age", 'Pclass']]
-    Y = dataset['Survived']
-
-    model = LinearRegression()
-    model.fit(X, Y)
-
-    
-    #Saving model in a given location provided as an env. variable
-    model_repo = os.environ['MODEL_REPO']
-    
-    if model_repo:
-        file_path = os.path.join(model_repo) 
-        os.chdir(file_path)
-
-        with open("Titanic_model.pkl", 'wb') as file:
-            pickle.dump(model, file)
-        logging.info("Saved the model to the location : " + model_repo)
-        return 200
-    else:
-        model.save("model.h5")
-        return jsonify({'message': 'The model was saved locally.'}), 200
+version https://git-lfs.github.com/spec/v1
+oid sha256:89316f3a7ef1ebd159b3d6468fb9b191d9f0a443dd62e0d9b0a98db3dde02e7d
+size 944

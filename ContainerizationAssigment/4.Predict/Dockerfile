@@ -1,14 +1,3 @@
-#using python as base image
-FROM python:3.9-slim
-#set work directory
-WORKDIR /myapp
-# Get all files in this directory
-COPY . .
-#install packages
-RUN pip install --no-cache-dir -r requirements.txt
-
-#expose to port 500
-EXPOSE 5000
-# define URL needed for Feature extraction
-# TEST dfasdff
-CMD ["python" ,"app.py"] 
+version https://git-lfs.github.com/spec/v1
+oid sha256:90c63d60dc5782171f6604ef23e541365b92c86ddedb1150d0d16c1bf435727e
+size 313

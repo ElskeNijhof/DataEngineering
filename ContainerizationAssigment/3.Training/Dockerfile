@@ -1,15 +1,3 @@
-#using python as base image
-FROM python:3.9-slim
-#set work directory
-WORKDIR /myapp
-# Get all files in this directory
-COPY . .
-#install packages
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install sklearn 
-#expose to port 500
-EXPOSE 5000
-# define URL needed for Feature extraction
-ENV Model_Repo = /myapp/models
-
-CMD ["python" ,"app2.py"] 
+version https://git-lfs.github.com/spec/v1
+oid sha256:d7c94cc5d123d006273d1d850d5508ea849222676ef258677e870caea7d16716
+size 354

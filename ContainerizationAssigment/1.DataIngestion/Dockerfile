@@ -1,18 +1,3 @@
-# define Python version
-FROM python:3.9-slim
-#define workdir
-WORKDIR /myapp
-# Copy requirements.txt  to the working directory
-COPY requirements.txt .
-# Install required python packages
-RUN pip install --no-cache-dir -r requirements.txt
-#Copying JSON file(database) and Python files
-COPY . .
-
-#Expose the port that our app runs in
-EXPOSE 5000
-
-# Meta Data 
-LABEL DataIngestion = "LocalVersion"
-# Starting up python 3 and App.py when container/image is being run
-CMD [ "python3", "app.py"]
+version https://git-lfs.github.com/spec/v1
+oid sha256:2cbcbf86a63d6d3977f112be9c91fbc668be83d0186bd2ee6a4ae29b8e9e7c83
+size 488

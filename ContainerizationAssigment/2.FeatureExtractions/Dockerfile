@@ -1,17 +1,3 @@
-# Using python 3.7 slim image as the base image
-FROM python:3.9-slim
-# Defining working directory and copy the requirements file. We will run the commands inside this new directory
-WORKDIR /myapp
-# Copy requirements.txt  to the working directory
-COPY requirements.txt .
-# Install required python packages
-RUN pip install --no-cache-dir -r requirements.txt
-# Copy all files in training-db local host directory to /usr/src/myapp in Docker container
-COPY . .
-# Expose the port that our app runs in
-EXPOSE 5000
-# Environment  Variables
-#ENV TRAININGDB_API=http://DataIngestion:500/DataIngestion/database
-
-# Run our App
-CMD ["python3","app.py"]
+version https://git-lfs.github.com/spec/v1
+oid sha256:f99a2d7252ca43d7fc1b58610fcdc748021bfb416d2344ddaea3ed1f38f32f4b
+size 639
